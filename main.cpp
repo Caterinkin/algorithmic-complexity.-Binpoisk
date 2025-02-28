@@ -1,10 +1,10 @@
 #include <iostream>
 
-// Функция для поиска количества элементов, больших точки отсчёта
+// Р¤СѓРЅРєС†РёСЏ РґР»СЏ РїРѕРёСЃРєР° РєРѕР»РёС‡РµСЃС‚РІР° СЌР»РµРјРµРЅС‚РѕРІ, Р±РѕР»СЊС€РёС… С‚РѕС‡РєРё РѕС‚СЃС‡С‘С‚Р°
 int countGreaterThan(int arr[], int size, int target) 
 {
     int left = 0, right = size - 1;
-    int position = size; // Изначально предполагаем, что все элементы больше
+    int position = size; // РР·РЅР°С‡Р°Р»СЊРЅРѕ РїСЂРµРґРїРѕР»Р°РіР°РµРј, С‡С‚Рѕ РІСЃРµ СЌР»РµРјРµРЅС‚С‹ Р±РѕР»СЊС€Рµ
 
     while (left <= right) 
     {
@@ -12,16 +12,16 @@ int countGreaterThan(int arr[], int size, int target)
 
         if (arr[mid] > target) 
         {
-            position = mid; // Запоминаем позицию
-            right = mid - 1; // Ищем левее
+            position = mid; // Р—Р°РїРѕРјРёРЅР°РµРј РїРѕР·РёС†РёСЋ
+            right = mid - 1; // РС‰РµРј Р»РµРІРµРµ
         }
         else 
         {
-            left = mid + 1; // Ищем правее
+            left = mid + 1; // РС‰РµРј РїСЂР°РІРµРµ
         }
     }
 
-    // Количество элементов, больших target
+    // РљРѕР»РёС‡РµСЃС‚РІРѕ СЌР»РµРјРµРЅС‚РѕРІ, Р±РѕР»СЊС€РёС… target
     return size - position;
 }
 
@@ -33,11 +33,11 @@ int main()
     int size = sizeof(arr) / sizeof(arr[0]);
 
     int target;
-    std::cout << "Введите точку отсчёта: ";
+    std::cout << "Р’РІРµРґРёС‚Рµ С‚РѕС‡РєСѓ РѕС‚СЃС‡С‘С‚Р°: ";
     std::cin >> target;
 
     int result = countGreaterThan(arr, size, target);
-    std::cout << "Количество элементов в массиве больших, чем " << target << ": " << result << std::endl;
+    std::cout << "РљРѕР»РёС‡РµСЃС‚РІРѕ СЌР»РµРјРµРЅС‚РѕРІ РІ РјР°СЃСЃРёРІРµ Р±РѕР»СЊС€РёС…, С‡РµРј " << target << ": " << result << std::endl;
 
     return EXIT_SUCCESS;
 }
